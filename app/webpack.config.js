@@ -62,10 +62,10 @@ module.exports = (env, args) => {
       hot: true,
       host: '0.0.0.0',
       historyApiFallback: true,
-      watchOptions: {
-        aggregateTimeout: 600,
-        poll: 1000
-      },
+      // watchOptions: {
+      //   aggregateTimeout: 600,
+      //   poll: 1000
+      // },
     },
     plugins: [
       new VueLoaderPlugin(),

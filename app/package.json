@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack serve --mode development --useLocalIp",
+    "dev": "webpack serve --mode development --useLocalIp",
     "watch": "webpack -w"
   },
   "author": "shun0918",
@@ -15,6 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "@vue/compiler-sfc": "^3.0.11",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",

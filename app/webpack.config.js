@@ -54,7 +54,6 @@ module.exports = (env, args) => ({
       // vue$: 'vue/dist/vue.js',
       '@src': path.resolve(__dirname, 'src'),
     },
-    modulesDirectories: ['node_modules'],
   },
   devServer: {
     contentBase: outputPath,

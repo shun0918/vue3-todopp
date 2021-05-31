@@ -1,0 +1,41 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.tabSize": 2,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"vue",
+			"typescript"
+		  ],
+		"vetur.validation.template": false,
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[vue]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+	},
+	"extensions": {
+		"recommendations": [
+			"octref.vetur",
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode",
+			"ms-vscode.vscode-typescript-next",
+			"hollowtree.vue-snippets",
+			"shardulm94.trailing-spaces",
+			"coenraads.bracket-pair-colorizer-2",
+		]
+	},
+}

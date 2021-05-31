@@ -26,15 +26,13 @@ module.exports = (env, args) => ({
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'ts-loader',
+        exclude: /(node_modules|bower_components)/,
         options: {
           appendTsSuffixTo: [/\.vue$/],
         },
       },
+      { test: /\.vue$/, loader: 'vue-loader',},
       {
         test: /\.(ico|svg|jpe?g|png|webp)$/,
         type: 'asset/resource',

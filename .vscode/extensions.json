@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "octref.vetur",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-next",
+    "hollowtree.vue-snippets",
+    "shardulm94.trailing-spaces",
+    "coenraads.bracket-pair-colorizer-2",
+  ]
+}

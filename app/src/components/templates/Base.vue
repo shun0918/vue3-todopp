@@ -1,5 +1,8 @@
 <template>
   <Header />
+  <main class="main">
+    <slot></slot>
+  </main>
 </template>
 
 <script lang="ts">
@@ -14,4 +17,8 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.main {
+  background-color: blanchedalmond;
+}
+</style>

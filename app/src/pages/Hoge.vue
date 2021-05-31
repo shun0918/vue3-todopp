@@ -1,21 +1,14 @@
 <template>
   <Base>
-    <h1>Todo List</h1>
-    <ul>
-      <li>Task1</li>
-      <li>Task2</li>
-      <li>Task3</li>
-    </ul>
+    <h2>This is a Hoge page.</h2>
   </Base>
 </template>
 <script lang="ts">
-import Header from '@src/components/organisms/Header.vue';
 import Base from '@src/components/templates/Base.vue';
 import { defineComponent } from 'vue';
 export default defineComponent({
-  name: 'Index',
+  name: 'Hoge',
   components: {
-    Header,
     Base,
   },
   setup() {},

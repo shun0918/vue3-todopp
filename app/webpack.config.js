@@ -1,4 +1,5 @@
 const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -32,10 +33,14 @@ module.exports = (env, args) => ({
           appendTsSuffixTo: [/\.vue$/],
         },
       },
-      { test: /\.vue$/, loader: 'vue-loader',},
+      { test: /\.vue$/, loader: 'vue-loader' },
       {
         test: /\.(ico|svg|jpe?g|png|webp)$/,
         type: 'asset/resource',
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
@@ -45,9 +50,11 @@ module.exports = (env, args) => ({
   resolve: {
     extensions: ['.js', '.ts', '.vue', '.json'],
     // Webpackで利用するときの設定(vueはかいちゃいけない！)
-    // alias: {
-    //   vue$: "vue/dist/vue.js"
-    // }
+    alias: {
+      // vue$: 'vue/dist/vue.js',
+      '@src': path.resolve(__dirname, 'src'),
+    },
+    modulesDirectories: ['node_modules'],
   },
   devServer: {
     contentBase: outputPath,
@@ -67,5 +74,6 @@ module.exports = (env, args) => ({
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
+    new MiniCssExtractPlugin(),
   ],
 });

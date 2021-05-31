@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <h1>Hello from App.vue.</h1>
-    <index />
-  </div>
+  <Header />
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Index from '@src/pages/Index.vue';
+import Header from '@src/components/organisms/Header.vue';
 
 export default defineComponent({
   components: {
-    Index,
+    Header,
   },
   setup() {},
 });
 </script>
+
+<style></style>

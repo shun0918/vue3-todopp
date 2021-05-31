@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <h1>Hello from App.vue.</h1>
-    <index />
-  </div>
+  <header>
+    <h1>TodoApp!</h1>
+  </header>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Index from '@src/pages/Index.vue';
 
 export default defineComponent({
-  components: {
-    Index,
-  },
   setup() {},
 });
 </script>
+<style>
+header {
+  background: tomato;
+}
+</style>

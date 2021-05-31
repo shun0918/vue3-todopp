@@ -15,9 +15,7 @@
     // デコレーターを有効に設定
     "experimentalDecorators": true,
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "@src/*": ["./src/*"]
     },
   },
   "include": [

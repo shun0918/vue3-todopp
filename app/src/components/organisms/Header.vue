@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>TodoApp!</h1>
+    <h1 class="title">TodoApp!</h1>
   </header>
 </template>
 <script lang="ts">
@@ -13,5 +13,8 @@ export default defineComponent({
 <style>
 header {
   background: tomato;
+}
+.title {
+  color: darkgreen;
 }
 </style>

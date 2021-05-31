@@ -1,14 +1,15 @@
 <template>
-  <h1 class="title">Hello World!</h1>
+  <Header />
 </template>
 <script lang="ts">
+import Header from '@src/components/organisms/Header.vue';
 import { defineComponent } from 'vue';
 export default defineComponent({
+  name: 'Index',
+  components: {
+    Header,
+  },
   setup() {},
 });
 </script>
-<style>
-.title {
-  color: #f00;
-}
-</style>
+<style></style>

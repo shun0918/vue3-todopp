@@ -2,6 +2,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 const outputPath = path.resolve(__dirname, 'dist');
 
@@ -20,7 +21,7 @@ module.exports = (env, args) => ({
   output: {
     path: outputPath,
     publicPath: 'http://localhost:8080/',
-    filename: '[name]-bundle.js',
+    filename: '[name]-bundle-[hash].js',
     assetModuleFilename: 'public/img/[hash][ext][query]',
   },
   module: {
@@ -63,16 +64,17 @@ module.exports = (env, args) => ({
     hot: true,
     host: '0.0.0.0',
     historyApiFallback: true,
-    // watchOptions: {
-    //   aggregateTimeout: 600,
-    //   poll: 1000
-    // },
   },
+  devtool: 'eval-source-map',
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     new MiniCssExtractPlugin(),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false,
+    }),
   ],
 });

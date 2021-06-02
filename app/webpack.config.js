@@ -10,7 +10,7 @@ const outputPath = path.resolve(__dirname, 'dist');
 module.exports = (env, args) => ({
   mode: args.mode,
   target: env.production ? ['web', 'es5'] : 'web',
-  // devtool: env.production ? 'source-map' : 'eval',
+  devtool: env.production ? 'source-map' : 'eval',
   entry: './src/main.ts',
   cache: {
     type: 'filesystem',
@@ -41,7 +41,7 @@ module.exports = (env, args) => ({
       },
       {
         test: /\.css$/i,
-        use: [!env.production ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [env.production ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
@@ -65,7 +65,6 @@ module.exports = (env, args) => ({
     host: '0.0.0.0',
     historyApiFallback: true,
   },
-  devtool: 'eval-source-map',
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({

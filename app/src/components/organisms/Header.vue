@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <section class="container mx-auto flex justify-between items-center">
     <Logo />
     <HeaderNav />
-  </header>
+  </section>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -18,9 +18,9 @@ export default defineComponent({
 </script>
 <style>
 header {
-  background: tomato;
+  background-color: var(--c-primary-shade);
 }
 .title {
-  color: darkgreen;
+  color: var(--c-white);
 }
 </style>

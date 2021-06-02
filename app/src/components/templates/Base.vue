@@ -1,5 +1,7 @@
 <template>
-  <Header />
+  <header class="flex items-center justify-center">
+    <Header />
+  </header>
   <main class="main">
     <slot></slot>
   </main>
@@ -18,7 +20,11 @@ export default defineComponent({
 </script>
 
 <style>
+header {
+  height: 50px;
+}
 .main {
-  background-color: blanchedalmond;
+  background-color: var(--c-bg-base);
+  min-height: calc(100vh - 50px);
 }
 </style>

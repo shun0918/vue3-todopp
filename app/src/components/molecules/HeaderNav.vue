@@ -1,8 +1,9 @@
 <template>
   <nav>
-    <ul>
-      <li><router-link tag="a" to="/">Top</router-link></li>
-      <li><router-link tag="a" to="/hoge">Hoge</router-link></li>
+    <ul class="flex">
+      <li v-for="route in routeList" key="route.path" class="px-4 text-white">
+        <router-link tag="a" :to="route.path">{{ route.name }}</router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -10,7 +11,21 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  setup() {},
+  setup() {
+    const routeList = [
+      {
+        name: 'Top',
+        path: '/',
+      },
+      {
+        name: 'Hoge',
+        path: '/hoge',
+      },
+    ];
+    return {
+      routeList,
+    };
+  },
 });
 </script>
 <style>

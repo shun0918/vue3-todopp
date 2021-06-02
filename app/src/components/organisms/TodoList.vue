@@ -1,13 +1,20 @@
 <template>
-  <h2>this is TodoList</h2>
-  <ul>
-    <li class="stateClass" v-for="todo in _todoList" key="todo.name">{{ todo.name }}:({{ todo.status }})</li>
-  </ul>
+  <section class="container border-gray-200 py-4">
+    <ul class="border">
+      <li
+        v-for="(todo, index) in _todoList"
+        :class="['border-gray-200 p-2', todo.style, { 'border-b': index !== _todoList.length - 1 }]"
+        key="todo.name"
+      >
+        {{ todo.name }}:({{ todo.status }})
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script lang="ts">
 import { TodoList } from '@src/types/todo';
-import { defineComponent, computed, PropType } from 'vue';
+import { defineComponent, computed, PropType, ComputedRef } from 'vue';
 
 export default defineComponent({
   props: {
@@ -16,7 +23,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const _todoList = computed(() =>
+    const _todoList: ComputedRef<TodoList> = computed(() =>
       props.todoList.map((item) => {
         return {
           style: 'status-' + item.status,
@@ -31,4 +38,11 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.status-doing {
+  @apply bg-yellow-200 text-gray-600;
+}
+.status-done {
+  @apply line-through text-gray-400;
+}
+</style>

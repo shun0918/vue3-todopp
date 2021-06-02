@@ -42,6 +42,8 @@
 			"hollowtree.vue-snippets",
 			"shardulm94.trailing-spaces",
 			"coenraads.bracket-pair-colorizer-2",
+			"csstools.postcss",
+			"bradlc.vscode-tailwindcss"
 		]
 	},
 }

@@ -1,7 +1,7 @@
 <template>
   <section class="container py-2">
     <div>
-      <InputTextButton :buttonName="buttonName" />
+      <InputTextButton :buttonName="buttonName" @add="add" />
     </div>
   </section>
 </template>
@@ -14,9 +14,14 @@ export default defineComponent({
   components: {
     InputTextButton,
   },
-  setup() {
+  emits: ['add'],
+  setup(props, context) {
+    const add = (value) => {
+      context.emit('add', value);
+    };
     return {
       buttonName: 'Add todo',
+      add,
     };
   },
 });

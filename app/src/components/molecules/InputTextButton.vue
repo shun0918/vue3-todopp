@@ -1,11 +1,11 @@
 <template>
-  <input type="text" class="p-2 rounded" v-model="state.value" />
-  <button @click="clicked()" class="ml-2 border border-gray-400 rounded p-2">{{ buttonName }}</button>
+  <input type="text" class="p-2 rounded" v-model="state.inputValue" />
+  <button @click="clicked" class="ml-2 border border-gray-400 rounded p-2">{{ buttonName }}</button>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 interface State {
-  value: string;
+  inputValue: string;
 }
 export default defineComponent({
   props: {
@@ -14,12 +14,15 @@ export default defineComponent({
       default: 'Add',
     },
   },
+  emits: ['add'],
   setup(props, context) {
     const state = reactive<State>({
-      value: '',
+      inputValue: '',
     });
     const clicked = () => {
-      console.log(state.value);
+      console.log(state.inputValue);
+      context.emit('add', state.inputValue);
+      state.inputValue = '';
     };
     return {
       buttonName: props.buttonName,

@@ -2,8 +2,8 @@
   <section class="container border-gray-200 py-4">
     <ul class="border">
       <li
-        v-for="(todo, index) in _todoList"
-        :class="['border-gray-200 p-2', todo.style, { 'border-b': index !== _todoList.length - 1 }]"
+        v-for="(todo, index) in todoList"
+        :class="['border-gray-200 p-2', todo.style, { 'border-b': index !== todoList.length - 1 }]"
         key="todo.name"
       >
         {{ todo.name }}:({{ todo.status }})
@@ -23,7 +23,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const _todoList: ComputedRef<TodoList> = computed(() =>
+    const todoList: ComputedRef<TodoList> = computed(() =>
       props.todoList.map((item) => {
         return {
           style: 'status-' + item.status,
@@ -32,7 +32,7 @@ export default defineComponent({
       })
     );
     return {
-      _todoList,
+      todoList,
     };
   },
 });

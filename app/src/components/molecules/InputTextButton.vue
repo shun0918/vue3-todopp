@@ -1,6 +1,8 @@
 <template>
-  <input type="text" class="p-2 rounded" v-model="state.inputValue" />
-  <button @click="clicked" class="ml-2 border border-gray-400 rounded p-2">{{ buttonName }}</button>
+  <input type="text" class="p-2 rounded" v-model="state.inputValue" test-data="inputText" />
+  <button @click="clicked" class="ml-2 border border-gray-400 rounded p-2" test-data="submitButton">
+    {{ buttonName }}
+  </button>
 </template>
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';

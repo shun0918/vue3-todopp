@@ -1,6 +1,10 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackOptionsNormalized, Configuration } from 'webpack';
+import { VueLoaderPlugin } from 'vue-loader';
+// import WebpackDevServer from 'webpack-dev-server';
 
 const isProduction = process.env.production;
 const outputPath = path.resolve(__dirname, 'dist');
@@ -72,5 +76,5 @@ const config: Configuration = {
       __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
     }),
-  ].concat(env.production ? [new MiniCssExtractPlugin()] : []),
+  ].concat(isProduction ? [new MiniCssExtractPlugin()] : []),
 };

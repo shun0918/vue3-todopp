@@ -1,7 +1,7 @@
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackOptionsNormalized, Configuration } from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
 // import WebpackDevServer from 'webpack-dev-server';
@@ -78,3 +78,5 @@ const config: Configuration = {
     }),
   ].concat(isProduction ? [new MiniCssExtractPlugin()] : []),
 };
+
+export default config;

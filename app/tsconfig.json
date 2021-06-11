@@ -24,6 +24,7 @@
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.vue",
+    "./*.ts"
   ],
   "exclude": [
     "node_modules"

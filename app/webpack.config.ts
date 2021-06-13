@@ -1,10 +1,12 @@
 import * as path from 'path';
 import * as webpack from 'webpack';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackOptionsNormalized, Configuration } from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
 // import WebpackDevServer from 'webpack-dev-server';
+// import 'webpack-dev-server';
+// webpack-dev-serverのインポートはなくても動くことを確認
 
 const isProduction = process.env.production;
 const outputPath = path.resolve(__dirname, 'dist');
